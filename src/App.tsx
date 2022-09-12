@@ -21,9 +21,9 @@ function App() {
 
     return (
         <div className="App">
-            <OnOff on={active} onChange={()=>{setActive(!active)}}/>
+            {/*<OnOff on={active} onChange={setActive}/>*/}
             ---
-            {/*<UncontrolledOnOff/>*/}
+            <UncontrolledOnOff onChange={setActive} /> {active.toString()}
             {/*<UnControlledAccordion titleValue={'Меню'}/>*/}
             {/*<UnControlledAccordion titleValue={'Users'}/>*/}
             ---
