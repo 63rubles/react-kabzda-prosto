@@ -1,21 +1,17 @@
 import React, {useState} from 'react';
-// import {OnOff} from "./OnOff";
-import {action} from "@storybook/addon-actions";
-import {Accordion} from "./Accordion";
+import {action} from "@storybook/addon-actions"
+import {UnControlledAccordion} from "../UnControlledAccordion/UnControlledAccordion";
+import {UncontrolledOnOff} from "../UncontrolledOnOff/UncontrolledOnOff";
 
 export default {
     title: "Accordion",
-    component: Accordion
+    component: UnControlledAccordion
 }
 
 const modeCallback = () => {
     action('accordion mode change event fired')
 }
 
-export const MenuCollapsedMode = () => <Accordion collapsed={true} onChange={modeCallback} titleValue={'Menu'} />
-export const UsersUnCollapsedMode = () => <Accordion collapsed={false} onChange={modeCallback} titleValue={'Users'} />
-
-export const CollapseChanging = () => {
-    const [collapsed,setCollapsed]=useState<boolean>(true)
-    return <Accordion collapsed={collapsed} onChange={()=>setCollapsed(!collapsed)} titleValue={'Menu'}/>
+export const ModeChanging = () => {
+    return <UnControlledAccordion titleValue={'Menu'}/>
 }
